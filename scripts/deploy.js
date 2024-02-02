@@ -12,8 +12,8 @@ async function main() {
 async function writeDeploymentInfo(contract) {
   const data = {
     contract: {
-      address: contract.address,
-      signerAddress: contract.signer.address,
+      address: contract.target,  // represents the contract address reffered to as 'target' in object
+      signerAddress: contract.runner.address,  // Use 'runner.address' instead of 'signer.address' 
       abi: contract.interface.format(),
     },
   };
